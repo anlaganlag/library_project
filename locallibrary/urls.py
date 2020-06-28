@@ -26,4 +26,5 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url='/catalog/')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('book/<uuid:pk>/renew/', views.renew_book_librarian, name='renew-book-librarian'),
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
